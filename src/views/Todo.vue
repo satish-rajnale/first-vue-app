@@ -1,7 +1,16 @@
 <template >
-  <div class="">
+  <div>
     <v-list flat subheader >
       <v-subheader>My daily todo</v-subheader>
+       <v-text-field
+            solo
+            label="Add task"
+            append-icon="mdi-plus"
+            class="pa-2"
+            hide-details
+            clearable
+          ></v-text-field>
+
 
       <div v-for="task in tasks" :key="task.id">
         <v-list-item @click="donetasks(task.id)" :class="{'blue lighten-5' : task.done}">
@@ -11,13 +20,19 @@
             </v-list-item-action>
 
             <v-list-item-content>
-              <v-list-item-title>{{ task.title }}</v-list-item-title>
+              <v-list-item-title   :class="{'text-decoration-line-through': task.done}">{{ task.title }}</v-list-item-title>
               <v-list-item-subtitle
                 >Notify me about updates to apps or games that I
                 downloaded</v-list-item-subtitle
               >
             </v-list-item-content>
+             <v-list-item-action>
+          <v-btn @click.stop="deleteTask(task.id)" icon>
+            <v-icon color="grey lighten-1">mdi-delete</v-icon>
+          </v-btn>
+        </v-list-item-action>
           </template>
+          
         </v-list-item>
         <v-divider></v-divider>
       </div>
@@ -28,10 +43,16 @@
 <script>
 export default {
   name: "Home",
-  methods: {donetasks(id){
-    let task = this.tasks.filter( i => i.id === id)[0];
-    task.done = !task.done
-  }},
+  methods: {
+    donetasks(id){
+      let task = this.tasks.filter( i => i.id === id)[0];
+      task.done = !task.done
+    },
+    deleteTask(id){
+      this.tasks = this.tasks.filter( i => i.id !== id);
+
+    },
+    },
   data() {
     return {
       tasks: [
