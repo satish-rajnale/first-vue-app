@@ -45,7 +45,7 @@
     <!-- app bar -->
 <v-app-bar
       app
-      color="#6A76AB"
+      color="primary"
       dark
     
       prominent
@@ -60,9 +60,9 @@
         ></v-img>
       </template>
 
-      <v-app-bar-nav-icon></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
-      <v-app-bar-title>Title</v-app-bar-title>
+      <v-app-bar-title>Your todos</v-app-bar-title>
 
       <v-spacer></v-spacer>
 
@@ -99,7 +99,7 @@
 <script>
   export default {
     data: () => ({ 
-      drawer: null ,
+      drawer: true ,
       items: [
           { title: 'Todos', icon: 'mdi-format-list-checks', to: "/" },
           { title: 'Photos', icon: 'mdi-image' },
