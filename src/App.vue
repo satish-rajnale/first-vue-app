@@ -1,6 +1,8 @@
 <template>
   <v-app id="inspire">
-     <v-navigation-drawer v-model="drawer" app>
+     <v-navigation-drawer  class="deep-purple accent-4"
+      dark
+       v-model="drawer" app>
       <v-list-item>
         <v-list-item-content>
           <v-list-item-title class="title">
@@ -15,6 +17,8 @@
       <v-divider></v-divider>
 
       <v-list
+           
+
         dense
         nav
       >
@@ -48,7 +52,7 @@
       color="primary"
       dark
     
-      prominent
+
       src="https://picsum.photos/1920/1080?random"
       
      
@@ -62,7 +66,7 @@
 
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
-      <v-app-bar-title>Your todos</v-app-bar-title>
+      <v-app-bar-title  style="width:300px;">My daily todo</v-app-bar-title>
 
       <v-spacer></v-spacer>
 
@@ -74,9 +78,30 @@
         <v-icon>mdi-heart</v-icon>
       </v-btn>
 
-      <v-btn icon>
-        <v-icon>mdi-dots-vertical</v-icon>
-      </v-btn>
+        <v-menu
+        left
+        bottom
+      >
+        <template v-slot:activator="{ on, attrs }">
+          <v-btn
+            icon
+            v-bind="attrs"
+            v-on="on"
+          >
+            <v-icon>mdi-dots-vertical</v-icon>
+          </v-btn>
+        </template>
+
+        <v-list>
+          <v-list-item
+            v-for="n in 5"
+            :key="n"
+            @click="() => {}"
+          >
+            <v-list-item-title>Option {{ n }}</v-list-item-title>
+          </v-list-item>
+        </v-list>
+      </v-menu>
 
       <template v-slot:extension>
         <v-tabs align-with-title>
@@ -95,7 +120,13 @@
     </v-main>
   </v-app>
 </template>
-
+<style >
+  .v-app-bar-title__content{
+    width:400px;
+    position:unset;
+    overflow: visible;
+    }
+</style>
 <script>
   export default {
     data: () => ({ 
