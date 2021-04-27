@@ -68,46 +68,46 @@ export default {
     return {
       newTaskTitle: "",
       tasks: [
-        {
-          id: 0,
-          title: "Todoist",
-          done: false,
-        },
-        {
-          id: 1,
-          title: "TickTick",
-          done: false,
-        },
-        {
-          id: 2,
-          title: "Microsoft",
-          done: false,
-        },
-        {
-          id: 3,
-          title: "Google Tasks",
-          done: false,
-        },
-        {
-          id: 4,
-          title: "WorkFlowy",
-          done: false,
-        },
-        {
-          id: 5,
-          title: "Dynalist",
-          done: false,
-        },
-        {
-          id: 6,
-          title: "TaskPaper",
-          done: false,
-        },
-        {
-          id: 7,
-          title: "ClickUp",
-          done: false,
-        },
+        // {
+        //   id: 0,
+        //   title: "Todoist",
+        //   done: false,
+        // },
+        // {
+        //   id: 1,
+        //   title: "TickTick",
+        //   done: false,
+        // },
+        // {
+        //   id: 2,
+        //   title: "Microsoft",
+        //   done: false,
+        // },
+        // {
+        //   id: 3,
+        //   title: "Google Tasks",
+        //   done: false,
+        // },
+        // {
+        //   id: 4,
+        //   title: "WorkFlowy",
+        //   done: false,
+        // },
+        // {
+        //   id: 5,
+        //   title: "Dynalist",
+        //   done: false,
+        // },
+        // {
+        //   id: 6,
+        //   title: "TaskPaper",
+        //   done: false,
+        // },
+        // {
+        //   id: 7,
+        //   title: "ClickUp",
+        //   done: false,
+        // },
       ],
     };
   },
