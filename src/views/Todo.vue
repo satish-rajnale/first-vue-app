@@ -8,7 +8,7 @@
       <div v-for="task in tasks" :key="task.id">
         <v-list-item
           @click="donetasks(task.id)"
-          :class="{ 'blue lighten-5': task.done }"
+          :class="{ 'deep-purple lighten-4 accent-1': task.done }"
         >
           <template v-slot:default>
             <v-list-item-action>
@@ -27,7 +27,7 @@
             </v-list-item-content>
             <v-list-item-action>
               <v-btn @click.stop="deleteTask(task.id)" icon>
-                <v-icon color="grey lighten-1">mdi-delete</v-icon>
+                <v-icon color="black lighten-3">mdi-delete</v-icon>
               </v-btn>
             </v-list-item-action>
           </template>
@@ -35,20 +35,23 @@
         <v-divider></v-divider>
       </div>
     </v-list>
-    <v-footer
+    <v-footer class="indigo lighten-5 white--text "
       v-bind="{fixed:true}"
       :padless="padless"
     >
+  
      <v-text-field
         v-model="newTaskTitle"
         @click:append="addTask()"
         @keyup.enter="addTask()"
+        color="deep-purple"
         label="Add task"
         append-icon="mdi-plus"
-        class="pa-2"
+        class="pa-2 white--text"
         hide-details
         clearable
       ></v-text-field>
+      
     </v-footer>
 
 <!-- <v-card height="400px">
