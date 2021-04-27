@@ -3,7 +3,9 @@
     <v-list flat subheader >
       <v-subheader>My daily todo</v-subheader>
        <v-text-field
-            solo
+            v-model="newTaskTitle"
+            @click:append="addTask()"
+            @keyup.enter="addTask()"
             label="Add task"
             append-icon="mdi-plus"
             class="pa-2"
@@ -52,9 +54,19 @@ export default {
       this.tasks = this.tasks.filter( i => i.id !== id);
 
     },
+    addTask(){
+      let newTask = {
+        id: Date.now(),
+        title: this.newTaskTitle,
+        done:false
+      };
+      this.tasks.push(newTask);
+      this.newTaskTitle = "";
+    }
     },
   data() {
     return {
+      newTaskTitle: "",
       tasks: [
         {
           id: 0,
