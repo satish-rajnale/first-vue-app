@@ -35,24 +35,27 @@
         <v-divider></v-divider>
       </div>
     </v-list>
-    <v-footer class="indigo lighten-5 white--text "
+    <!-- <v-footer class="indigo lighten-5 white--text "
       v-bind="{fixed:true}"
-      :padless="padless"
-    >
+    
+     app
+    > -->
   
      <v-text-field
+     app
+      v-bind="{fixed:true}"
         v-model="newTaskTitle"
         @click:append="addTask()"
         @keyup.enter="addTask()"
         color="deep-purple"
         label="Add task"
         append-icon="mdi-plus"
-        class="pa-2 white--text"
+        class="pa-5 white--text"
         hide-details
         clearable
       ></v-text-field>
       
-    </v-footer>
+    <!-- </v-footer> -->
 
 <!-- <v-card height="400px">
     <v-footer
